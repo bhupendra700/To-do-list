@@ -6,7 +6,6 @@ import { ToastContainer, toast, Bounce } from "react-toastify";
 import {
   GithubAuthProvider,
   GoogleAuthProvider,
-  OAuthProvider,
   signInWithEmailAndPassword,
   signInWithPopup,
 } from "firebase/auth";
@@ -25,9 +24,9 @@ const Login = () => {
 
   let [isLogin, setIsLogin] = useState(false);
 
-  const toastifyfun = (state , message)=>{
-    if(state == "success"){
-      toast.success('SuccessFully Send Email', {
+  const toastifyfun = (state, message) => {
+    if (state == "success") {
+      toast.success("SuccessFully Send Email", {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -37,11 +36,11 @@ const Login = () => {
         progress: undefined,
         theme: "colored",
         transition: Bounce,
-        toastId:"Success"
-        });
-    }else{
-      const msg = message == "Offline" ? "You are Offline" : message
-      toast.error(msg , {
+        toastId: "Success",
+      });
+    } else {
+      const msg = message == "Offline" ? "You are Offline" : message;
+      toast.error(msg, {
         position: "bottom-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -54,7 +53,7 @@ const Login = () => {
         toastId: "Error",
       });
     }
-  }
+  };
   const commonLogin = async (method) => {
     try {
       if (isConnected) {
@@ -64,12 +63,9 @@ const Login = () => {
           if (method === "google") {
             const googleProvider = new GoogleAuthProvider();
             await signInWithPopup(auth, googleProvider);
-          } else if (method === "github") {
+          } else {
             const githubProvider = new GithubAuthProvider();
             await signInWithPopup(auth, githubProvider);
-          } else {
-            const appleProvider = new OAuthProvider("apple.com");
-            await signInWithPopup(auth, appleProvider);
           }
           const user = auth.currentUser;
           let docref = doc(db, "user", user.uid);
@@ -82,11 +78,11 @@ const Login = () => {
         navigate("/");
       } else {
         setIsLogin(false);
-        toastifyfun("error" , "Offline")
+        toastifyfun("error", "Offline");
       }
     } catch (error) {
       setIsLogin(false);
-      toastifyfun("error" , error.message)
+      toastifyfun("error", error.message);
     }
   };
 
@@ -102,10 +98,6 @@ const Login = () => {
 
   const loginwithgithub = async () => {
     commonLogin("github");
-  };
-
-  const loginwithapple = async () => {
-    commonLogin("apple");
   };
 
   let [showForgot, setShowForgot] = useState(false);
@@ -198,7 +190,7 @@ const Login = () => {
                 className="forgot-pwd"
                 onClick={(e) => {
                   e.preventDefault();
-                  setShowForgot(true)
+                  setShowForgot(true);
                 }}
               >
                 Forgot Password?
@@ -244,18 +236,16 @@ const Login = () => {
                   >
                     <i className="ri-github-fill" /> Continue with Github
                   </button>
-                  <button
-                    className="apple-btn"
-                    type="button"
-                    onClick={loginwithapple}
-                  >
-                    <i className="ri-apple-fill" /> Continue with Apple
-                  </button>
                 </div>
               </div>
             </form>
           </section>
-          {showForgot && <ForgotPwd setShowForgot={setShowForgot} toastifyfun={toastifyfun}/>}
+          {showForgot && (
+            <ForgotPwd
+              setShowForgot={setShowForgot}
+              toastifyfun={toastifyfun}
+            />
+          )}
         </div>
       </div>
     </>

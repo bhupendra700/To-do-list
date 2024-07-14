@@ -19,7 +19,7 @@ header {
     height: 54px;
     padding: 8px;
     background-color: #303030;
-    border-bottom: 2px solid #505050;
+    border-bottom: 1px solid #505050;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -522,7 +522,7 @@ footer {
     z-index: 1;
     padding: 18px;
     background-color: #303030;
-    border-top: 2px solid #505050;
+    border-top: 1px solid #505050;
     display: flex;
     justify-content: center;
 }

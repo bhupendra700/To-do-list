@@ -6,6 +6,10 @@
         overflow: hidden;
     }
 
+    header {
+        border-bottom: 2px solid #505050;
+    }
+
     .list-body {
         max-height: 600px;
         width: 450px;
@@ -19,6 +23,7 @@
     }
 
     footer {
+        border-top: 2px solid #505050;
         position: relative;
     }
 }
@@ -58,14 +63,19 @@
         color: #000;
     }
 
-    .userimage-loader:after{
+    .userimage-loader:after {
         border-color: #000 #000 #000 transparent;
         animation: image-loader 2s ease-in-out infinite;
     }
-    
+
     @keyframes image-loader {
-        0%{rotate: 0deg;}
-        100%{rotate: 360deg;}
+        0% {
+            rotate: 0deg;
+        }
+
+        100% {
+            rotate: 360deg;
+        }
     }
 
     .menu-container .user-img-container .img-btn {
@@ -102,7 +112,8 @@
     }
 
     .menu-container .menu-btn .menu-in,
-    .menu-out, .delete-account {
+    .menu-out,
+    .delete-account {
         background-color: transparent;
         color: #000;
     }
@@ -115,7 +126,9 @@
         border-left: 1px solid #ddd;
     }
 
-    .menu-container .menu-btn .menu-in:hover, .menu-out:hover, .delete-account:hover {
+    .menu-container .menu-btn .menu-in:hover,
+    .menu-out:hover,
+    .delete-account:hover {
         background-color: #f1f1f1;
     }
 
@@ -130,31 +143,32 @@
         border: 2px solid #dcdcdc;
     }
 
-    .popup .popup-pwd-box{
+    .popup .popup-pwd-box {
         background-color: #f1f1f1;
         border: 2px solid #ddd;
     }
 
-    .popup-pwd-box label{
+    .popup-pwd-box label {
         border-right: 2px solid #ddd;
         color: #000;
     }
 
-    .popup-pwd-box #popup-pwd{
+    .popup-pwd-box #popup-pwd {
         color: #000;
     }
 
-    .popup .popup-btn .yes-btn, .no-btn {
+    .popup .popup-btn .yes-btn,
+    .no-btn {
         background-color: #dcdcdc;
         color: #000;
     }
 
-    .popup .popup-btn .yes-btn:hover{
+    .popup .popup-btn .yes-btn:hover {
         background-color: #ff6347;
         color: #fff;
     }
 
-    .popup .popup-btn .no-btn:hover{
+    .popup .popup-btn .no-btn:hover {
         background-color: #3cb371;
         color: #fff;
     }
@@ -216,7 +230,8 @@
         }
     }
 
-    .list-btn .edit-btn, .del-btn {
+    .list-btn .edit-btn,
+    .del-btn {
         background-color: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         color: #000;
@@ -248,13 +263,15 @@
         color: #000;
     }
 
-    .add-container .add-btn, .editing-btn {
+    .add-container .add-btn,
+    .editing-btn {
         background-color: #fff;
         color: #000;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-    .add-container .add-btn:hover, .editing-btn:hover {
+    .add-container .add-btn:hover,
+    .editing-btn:hover {
         background-color: #f0fff0;
     }
 

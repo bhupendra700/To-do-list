@@ -6,7 +6,6 @@ import { auth, db } from "./Firebase";
 import {
   createUserWithEmailAndPassword,
   GithubAuthProvider,
-  OAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
 import { ToastContainer, toast, Bounce } from "react-toastify";
@@ -38,15 +37,12 @@ const Signup = () => {
             Email: Email,
           });
         } else {
-          if ("google") {
+          if (method === "google") {
             const googleProvider = new GoogleAuthProvider();
             await signInWithPopup(auth, googleProvider);
-          } else if ("github") {
-            const githProvider = new GithubAuthProvider();
-            await signInWithPopup(auth, githProvider);
           } else {
-            const appleProvider = new OAuthProvider("apple.com");
-            await signInWithPopup(auth, appleProvider);
+            const githubProvider = new GithubAuthProvider();
+            await signInWithPopup(auth, githubProvider);
           }
   
           const user = auth.currentUser;
@@ -103,10 +99,6 @@ const Signup = () => {
 
   const signUpwithGithub = async () => {
     commonSignup("github");
-  };
-
-  const signUpwithApple = async () => {
-    commonSignup("apple");
   };
 
   return (
@@ -233,13 +225,6 @@ const Signup = () => {
                     onClick={signUpwithGithub}
                   >
                     <i className="ri-github-fill" /> Continue with Github
-                  </button>
-                  <button
-                    className="apple-btn"
-                    type="button"
-                    onClick={signUpwithApple}
-                  >
-                    <i className="ri-apple-fill" /> Continue with Apple
                   </button>
                 </div>
               </div>
