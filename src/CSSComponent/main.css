@@ -1,0 +1,603 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: "Nunito", sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: #202020;
+    color: #fff;
+}
+
+/* header */
+header {
+    height: 54px;
+    padding: 8px;
+    background-color: #303030;
+    border-bottom: 2px solid #505050;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    font-size: 25px;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.info .list-count {
+    padding: 3px 8px;
+    background-color: #404040;
+    border-radius: 15px;
+}
+
+/* menu */
+.menu {
+    position: relative;
+    font-size: 26px;
+    color: #fff;
+}
+
+/* menu-container */
+.menu .menu-container {
+    width: 200px;
+    background-color: #202020;
+    border: 2px solid #505050;
+    border-radius: 3px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.menu-container .menu-container-close-btn {
+    background-color: transparent;
+    border: 0;
+    position: absolute;
+    right: 5px;
+    top: 2px;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.menu-container .menu-container-close-btn:hover {
+    color: #ff6347;
+}
+
+.menu-container .user-img-container .user-icon{
+    font-size: 80px;
+    text-align: center;
+}
+
+.menu-container .user-img-container .userimage{
+    margin: 15px auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.userimage-loader:after{
+    height: 105px;
+    width: 105px;
+    content: "";
+    position: absolute;
+    z-index: 1;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid;
+    border-color: #fff #fff #fff transparent;
+    animation: image-loader 2s ease-in-out infinite;
+}
+
+@keyframes image-loader {
+    0%{rotate: 0deg;}
+    100%{rotate: 360deg;}
+}
+
+.menu-container .user-img-container input[type=file]{
+    display: none;
+}
+
+.menu-container .user-img-container .image{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.menu-container .user-img-container .image img{
+    width: 100px;
+    aspect-ratio: 1/1;
+}
+
+.menu-container .user-img-container .img-btn{
+    height: 22px;
+    width: 22px;
+    background-color: #505050;
+    border-radius: 50%;
+    border: 2px solid #202020;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    position: absolute;
+    right: 2px;
+    bottom: 5px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.menu-container .user-img-container .img-btn:hover{
+    background-color: #3cb371;
+}
+
+.userimage .image .image-edit-container{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-top: 2px solid #505050;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    bottom: 0;
+    transform: translateY(35px);
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.userimage .image:hover .image-edit-container{
+    transform: translateY(0px);
+    transition: all 0.2s linear;
+}
+
+.userimage .image .image-edit-container .edit-image-btn{
+    width: 100%;
+    padding: 0 0 10px 10px;
+    border-right: 1px solid #505050;
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.userimage .image .image-edit-container .edit-image-btn:hover{
+    background-color: #3cb371;
+}
+
+.userimage .image .image-edit-container .del-image-btn{
+    width: 100%;
+    padding: 0 10px 10px 0;
+    background-color: transparent;
+    border: 0;
+    border-left: 1px solid #505050;
+    font-size: 15px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.userimage .image .image-edit-container .del-image-btn:hover{
+    background-color: #ff6347;
+}
+
+.menu-container .user-detail {
+    margin: 8px;
+    border-radius: 5px;
+    display: grid;
+    gap: 2px;
+    overflow: hidden;
+}
+
+.menu-container .user-detail .name {
+    padding: 5px;
+    background-color: #303030;
+    font-size: 15px;
+    overflow: hidden;
+    text-align: center;
+    text-transform: capitalize;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+}
+
+.menu-container .user-detail .email {
+    padding: 5px;
+    background-color: #303030;
+    font-size: 15px;
+    overflow: hidden;
+    text-align: center;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    text-transform: lowercase;
+}
+
+.menu-container .menu-btn {
+    background-color: #303030;
+    border-top: 2px solid #505050;
+    display: flex;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.menu-container .menu-btn .menu-in,
+.menu-out, .delete-account {
+    width: 100%;
+    padding: 5px;
+    background-color: transparent;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    text-wrap: nowrap;
+    font-size: 13px !important;
+    border-radius: 0;
+}
+
+.menu-container .menu-btn .menu-out{
+    border-right: 1px solid #505050;
+}
+.menu-container .menu-btn .delete-account{
+    border-left: 1px solid #505050;
+}
+
+.menu-container .menu-btn .menu-in:hover,
+.menu-out:hover, .delete-account:hover {
+    background-color: #404040;
+}
+
+.menu-container .menu-btn .delete-account:hover{
+    color: #ff6347;
+}
+
+/* delete popup */
+.del-popup{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    align-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    overflow: auto;
+}
+
+.del-popup::-webkit-scrollbar{
+    display: none;
+}
+
+.del-popup .popup{
+    margin: 25px auto;
+    padding: 15px;
+    max-width: 400px;
+    background-color: #303030;
+    border-radius: 10px;
+    border: 2px solid #505050;
+}
+
+.popup .del-warn span{
+    font-size: 18px;
+}
+
+.popup .del-warn span q{
+    color: red;
+}
+
+.popup .del-warn ul{
+    margin-top: 2px;
+    margin-left: 15px;
+}
+
+.popup .popup-pwd-box{
+    margin-top: 15px;
+    width: 100%;
+    background-color: #404040;
+    border: 2px solid #505050;
+    border-radius: 5px;
+    display: flex;
+    outline: none;
+    color: #fff;
+    overflow: hidden;
+}
+
+.popup-pwd-box label{
+    display: block;
+    padding: 6px;
+    border-right: 2px solid #505050;
+}
+
+.popup-pwd-box #popup-pwd{
+    width: 100%;
+    padding: 0 6px;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    color: #fff;
+}
+
+.popup .popup-btn{
+    margin-top: 10px;
+    display: flex;
+    gap: 25px;
+    justify-content: space-between;
+}
+
+.popup .popup-btn .yes-btn, .no-btn{
+    background-color: #404040;
+    padding: 5px;
+    width: 100%;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.popup .popup-btn .yes-btn .del-loader{
+    margin: auto;
+}
+.popup .popup-btn .yes-btn .del-loader .loader{
+    stroke: #fff !important;
+}
+
+.popup .popup-btn .yes-btn:hover ,.yes-btn:focus{
+    background-color: #ff6347;
+}
+
+.popup .popup-btn .no-btn:hover, .no-btn:focus{
+    background-color: #3cb371;
+}
+
+.popup .popup-btn .yes-btn:focus{
+    background-color: #ff6347;
+}
+
+.popup .popup-btn .no-btn:focus{
+    background-color: #3cb371;
+}
+
+/* main */
+main {
+    margin: 8px 0;
+    padding: 0 8px;
+    height: calc(100vh - 160px);
+    border-radius: 5px;
+    overflow: auto;
+}
+
+main::-webkit-scrollbar {
+    display: none;
+}
+
+main .warn, .success{
+    align-content: center;
+    height: 100%;
+    text-align: center;
+    color: green;
+}
+
+main .warn{
+    color: #ff0000;
+}
+
+/* list */
+.list {
+    margin-bottom: 8px;
+    padding: 8px;
+    background-color: #303030;
+    border-radius: 5px;
+    border: 1px solid #404040;
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.list:hover{
+    border: 1px solid #606060;
+    
+}
+
+.list-detail {
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto auto;
+}
+
+.list-detail #check, .check-loader-container {
+    margin-right: 8px;
+    grid-row: 1 / span 2 ;
+    cursor: pointer;
+}
+
+/* Check loader */
+.check-loader-container{
+    animation: check-rotate 0.75s linear infinite;
+}
+
+.check-loader-container .check-loader{
+    stroke: #fff;
+    stroke-linecap: round;
+    stroke-dasharray: 2, 30;
+    animation: check-dasharray 3s ease-in-out infinite;
+}
+
+@keyframes check-rotate {
+    0%{
+        rotate: 0deg;
+    }
+    100%{
+        rotate: 360deg;
+    }
+}
+
+@keyframes check-dasharray {
+    0%{
+        stroke-dasharray: 2,30;
+    }
+
+    50%{
+        stroke-dasharray: 22,30;
+
+    }
+
+    100%{
+        stroke-dasharray: 2,30;
+    }
+}
+
+.list-title {
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.list-detail #check:checked ~ .list-title {
+    text-decoration: line-through;
+}
+
+.list-detail .time-stamp {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    align-items: center;
+    color: grey;
+    font-size: 12px;
+}
+
+.list-detail .time-stamp .done {
+    display: none;
+}
+
+.list-detail #check:checked ~ .time-stamp .done {
+    display: block !important;
+}
+
+.list-btn {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.list-btn .edit-btn, .del-btn {
+    width: 30px;
+    height: 30px;
+    background-color: #404040;
+    border: 0;
+    border-radius: 50%;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.list-btn .edit-btn:hover {
+    background-color: #00bfff;
+}
+
+.list-btn .del-btn:hover {
+    background-color: #ff0000;
+}
+
+/* footer */
+footer {
+    height: 90px;
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
+    padding: 18px;
+    background-color: #303030;
+    border-top: 2px solid #505050;
+    display: flex;
+    justify-content: center;
+}
+
+footer .add-container {
+    width: 100%;
+    padding: 5px;
+    background-color: #202020;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.add-container input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    background-color: transparent;
+    border: 0;
+    font-size: 16px;
+    outline: none;
+    color: #fff;
+}
+
+.add-container .add-btn, .editing-btn {
+    height: 100%;
+    padding: 8px;
+    background-color: #303030;
+    border: 0;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    align-content: center;
+    overflow: hidden;
+}
+
+.add-container .add-btn:hover, .editing-btn:hover {
+    background-color: #00bfff;
+}
+
+
+/* svg loader */
+.loader-container{
+    display: block;
+    animation: rotate 0.75s linear infinite;
+}
+
+.loader-container .loader{
+    stroke: #fff;
+    stroke-linecap: round;
+    stroke-dasharray: 5, 60;
+    animation: dasharray 3s ease-in-out infinite;
+}
+
+@keyframes rotate {
+    0%{
+        rotate: 0deg;
+    }
+    100%{
+        rotate: 360deg;
+    }
+}
+
+@keyframes dasharray {
+    0%{
+        stroke-dasharray: 5,60;
+    }
+
+    50%{
+        stroke-dasharray: 38,60;
+
+    }
+
+    100%{
+        stroke-dasharray: 5,60;
+    }
+}

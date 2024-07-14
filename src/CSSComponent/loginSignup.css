@@ -1,0 +1,418 @@
+.login-signup-box {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(90deg,#f1f1f1, rgba(124, 104, 238, 0.8));
+    align-content: center;
+    overflow: auto;
+    color: #000;
+}
+
+.main-form {
+    margin: 30px auto;
+    width: 660px;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+    overflow: auto;
+}
+
+/* usergreet and chng buttons */
+.usergreet {
+    width: 350px;
+    padding: 25px;
+    background-color: #7b68ee;
+    border-radius: 0 100px 70px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.usergreet .login-greet-box, .signup-greet-box {
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.usergreet .login-greet-box h1, .signup-greet-box h1 {
+    font-size: xx-large;
+}
+
+.usergreet .login-greet-box p, .signup-greet-box p {
+    text-align: center;
+}
+
+.usergreet .login-greet-box button, .signup-greet-box button {
+    margin-top: 20px;
+    padding: 3px 15px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.1s linear;
+
+}
+
+.usergreet .login-greet-box button:hover, .signup-greet-box button:hover {
+    background-color: #6a5acd;
+    border: 2px solid #6a5acd;
+}
+
+/* login and signup forms */
+.forms {
+    width: 300px;
+    padding: 8px;
+    position: relative;
+}
+
+.forms .close-btn {
+    width: 25px;
+    height: 25px;
+    background-color: #ddd;
+    border-radius: 0 0 0 50%;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 16px;
+    cursor: pointer;
+    overflow: auto;
+    color: #000;
+}
+
+.forms .close-btn:hover {
+    background-color: red;
+    color: #fff;
+}
+
+/* chng form buttons */
+.forms .chng-form {
+    display: none;
+}
+
+.chng-form .login-form, .signup-form {
+    width: 100%;
+    padding: 5px;
+    background-color: transparent;
+    border: 0;
+    font-size: 18px;
+    color: #000;
+    cursor: pointer;
+}
+
+.chng-form .login-form{
+    border-right: 1px solid #ddd;
+}
+
+.chng-form .signup-form{
+    border-left: 1px solid #ddd;
+}
+
+.chng-form .hover-chngbtn {
+    background-color: #e5eeff;
+    color: #7b68ee;
+    font-weight: bold;
+}
+
+/* login-box */
+.login-box .login-email-box, .login-password-box {
+    margin: 15px 0 8px 0;
+    border-bottom: 2px solid #ddd;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.login-box .login-email-box label, .login-password-box label {
+    display: block;
+    padding: 5px 0 5px 0;
+    font-size: 18px;
+    color: #000;
+}
+
+.login-box .login-email-box input[type=email], .login-password-box input[type=password] {
+    width: 100%;
+    padding: 5px;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    font-size: 15px;
+    color: #000;
+}
+
+.login-email-box input[type=email] {
+    text-transform: lowercase;
+}
+
+.login-email-box input[type=email]::placeholder {
+    text-transform: none;
+}
+
+.login-email-box input[type=email]:invalid {
+    color: red;
+}
+
+.login-box .forgot-pwd {
+    display: block;
+    text-align: right;
+    text-decoration: none;
+    font-size: 11px;
+    color: #0000ff;
+}
+
+.login-box .login-submit-btn {
+    margin-top: 3px;
+    width: 100%;
+    height: 32px;
+    padding: 5px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #6a5acd;
+    align-content: center;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.login-box .login-submit-btn:hover {
+    background-color: #7b68ee;
+}
+
+/* signup form */
+.signup-box .signup-name-box, .signup-email-box, .signup-password-box {
+    margin: 15px 0 8px 0;
+    border-bottom: 2px solid #ddd;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.signup-box .signup-name-box label, .signup-email-box label, .signup-password-box label {
+    display: block;
+    padding: 5px 0 5px 0;
+    font-size: 18px;
+    color: #000;
+}
+
+.signup-box .signup-name-box input[type=text], .signup-email-box input[type=email], .signup-password-box input[type=password] {
+    width: 100%;
+    padding: 5px;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    font-size: 15px;
+    color: #000;
+}
+
+.signup-name-box input[type=text] {
+    text-transform: capitalize;
+}
+
+.signup-email-box input[type=email] {
+    text-transform: lowercase;
+}
+
+.signup-email-box input[type=email]::placeholder {
+    text-transform: none;
+}
+
+.signup-email-box input[type=email]:invalid {
+    color: red;
+}
+
+.signup-box .signup-submit-btn {
+    margin-top: 5px;
+    width: 100%;
+    height: 32px;
+    padding: 5px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #6a5acd;
+    align-content: center;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.signup-box .signup-submit-btn:hover{
+    background-color: #7b68ee;
+}
+
+/* forgot pwd */
+.forget-pwd-container{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    align-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: auto;
+}
+
+.forget-pwd-container::-webkit-scrollbar{
+    display: none;
+}
+
+.forget-pwd-form{
+    margin: 25px auto;
+    max-width: 300px;
+    padding: 30px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.forget-pwd-form .close-forget-btn{
+    height: 25px;
+    width: 25px;
+    background-color: #f1f1f1;
+    border: 0;
+    border-radius: 0 0 0 50%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+}
+
+.forget-pwd-form .close-forget-btn:hover{
+    background-color: red;
+    color: #fff;
+}
+
+.forget-pwd-form .forget-email-box{
+    background-color: #f1f1f1;
+    border-bottom: 2px solid #ddd;
+    display: flex;
+    align-items: center;
+}
+
+.forget-email-box label{
+    padding: 5px 0 5px 5px;
+}
+
+.forget-email-box input[type=email]{
+    width: 100%;
+    padding: 5px;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+}
+
+.forget-pwd-form .forget-btn{
+    height: 28px;
+    margin-top: 10px;
+    padding: 5px;
+    width: 100%;
+    border: 0;
+    border-radius: 2px;
+    background-color: #6a5acd;
+    align-content: center;
+    color: #fff;
+    cursor: pointer;
+}
+
+.forget-pwd-form .forget-btn:hover{
+    background-color: #7b68ee;
+}
+
+.forget-pwd-form .forget-text{
+    margin-top: 15px;
+}
+
+.forget-text .bydefault-text, .success-text{
+    text-align: justify;
+}
+
+.forget-text .success-text{
+    color: #3cb371;
+}
+/* method */
+.mtd .or {
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.mtd .or .line {
+    width: 100%;
+    border-top: 1px solid #ddd;
+}
+
+.mtd .or span {
+    padding: 5px;
+    background-color: transparent;
+    color: #000;
+}
+
+.mtd .mtd-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mtd-btn .google-btn, .github-btn, .apple-btn {
+    padding: 5px;
+    background-color: transparent;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #000;
+    text-wrap: nowrap;
+}
+
+.mtd-btn .google-btn:hover, .github-btn:hover, .apple-btn:hover {
+    background-color: #f1f1f1;
+}
+
+/* loader */
+.form-loader-container{
+    display: inline;
+    animation: form-rotate 0.75s linear infinite;
+}
+
+.form-loader-container .form-loader{
+    stroke: #fff;
+    stroke-linecap: round;
+    stroke-dasharray: 5, 60;
+    animation: form-dasharray 3s ease-in-out infinite;
+}
+
+@keyframes form-rotate {
+    0%{
+        rotate: 0deg;
+    }
+    100%{
+        rotate: 360deg;
+    }
+}
+
+@keyframes form-dasharray {
+    0%{
+        stroke-dasharray: 5,60;
+    }
+
+    50%{
+        stroke-dasharray: 38,60;
+
+    }
+
+    100%{
+        stroke-dasharray: 5,60;
+    }
+}

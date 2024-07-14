@@ -1,0 +1,305 @@
+@media only screen and (min-width:1000px) {
+    body {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .list-body {
+        max-height: 600px;
+        width: 450px;
+        border: 2px solid #505050;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    main {
+        max-height: calc(600px - 164px);
+    }
+
+    footer {
+        position: relative;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #f1f1f1;
+        color: #000;
+    }
+
+    /* header */
+    header {
+        background-color: #fff;
+        border-bottom: 2px solid #ddd;
+    }
+
+    .info .list-count {
+        background-color: transparent;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* menu */
+    .menu .icon {
+        color: #000;
+    }
+
+    .menu .menu-container {
+        background-color: #fff;
+        border: 2px solid #ddd;
+    }
+
+    .menu-container .menu-container-close-btn {
+        color: #000;
+    }
+
+    .menu-container .user-img-container .user-icon {
+        color: #000;
+    }
+
+    .userimage-loader:after{
+        border-color: #000 #000 #000 transparent;
+        animation: image-loader 2s ease-in-out infinite;
+    }
+    
+    @keyframes image-loader {
+        0%{rotate: 0deg;}
+        100%{rotate: 360deg;}
+    }
+
+    .menu-container .user-img-container .img-btn {
+        background-color: #ddd;
+        border: 2px solid #fff;
+    }
+
+    .userimage .image .image-edit-container {
+        background-color: rgba(255, 255, 255, 0.5);
+        border-top: 2px solid #ddd;
+    }
+
+    .userimage .image .image-edit-container .edit-image-btn {
+        border-right: 1px solid #ddd;
+    }
+
+    .userimage .image .image-edit-container .del-image-btn {
+        border-left: 1px solid #ddd;
+    }
+
+    .menu-container .user-detail .name {
+        background-color: #f1f1f1;
+        color: #000;
+    }
+
+    .menu-container .user-detail .email {
+        background-color: #f1f1f1;
+        color: #000;
+    }
+
+    .menu-container .menu-btn {
+        background-color: #fff;
+        border-top: 2px solid #ddd;
+    }
+
+    .menu-container .menu-btn .menu-in,
+    .menu-out, .delete-account {
+        background-color: transparent;
+        color: #000;
+    }
+
+    .menu-container .menu-btn .menu-out {
+        border-right: 1px solid #ddd;
+    }
+
+    .menu-container .menu-btn .delete-account {
+        border-left: 1px solid #ddd;
+    }
+
+    .menu-container .menu-btn .menu-in:hover, .menu-out:hover, .delete-account:hover {
+        background-color: #f1f1f1;
+    }
+
+    /* delete popup */
+    .del-popup {
+        background-color: rgba(241, 241, 241, 0.6);
+        backdrop-filter: blur(10px);
+    }
+
+    .del-popup .popup {
+        background-color: #fff;
+        border: 2px solid #dcdcdc;
+    }
+
+    .popup .popup-pwd-box{
+        background-color: #f1f1f1;
+        border: 2px solid #ddd;
+    }
+
+    .popup-pwd-box label{
+        border-right: 2px solid #ddd;
+        color: #000;
+    }
+
+    .popup-pwd-box #popup-pwd{
+        color: #000;
+    }
+
+    .popup .popup-btn .yes-btn, .no-btn {
+        background-color: #dcdcdc;
+        color: #000;
+    }
+
+    .popup .popup-btn .yes-btn:hover{
+        background-color: #ff6347;
+        color: #fff;
+    }
+
+    .popup .popup-btn .no-btn:hover{
+        background-color: #3cb371;
+        color: #fff;
+    }
+
+    .popup .popup-btn .yes-btn:focus {
+        background-color: #ff6347;
+        color: #fff;
+    }
+
+    .popup .popup-btn .no-btn:focus {
+        background-color: #3cb371;
+        color: #fff;
+    }
+
+    /* list */
+    .list {
+        background-color: #fff;
+        border: 1px solid #ddd;
+    }
+
+    .list:hover {
+        border: 1px solid #87cefa;
+    }
+
+    /* Check loader */
+    .check-loader-container {
+        animation: check-rotate 0.75s linear infinite;
+    }
+
+    .check-loader-container .check-loader {
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-dasharray: 2, 30;
+        animation: check-dasharray 3s ease-in-out infinite;
+    }
+
+    @keyframes check-rotate {
+        0% {
+            rotate: 0deg;
+        }
+
+        100% {
+            rotate: 360deg;
+        }
+    }
+
+    @keyframes check-dasharray {
+        0% {
+            stroke-dasharray: 2, 30;
+        }
+
+        50% {
+            stroke-dasharray: 22, 30;
+
+        }
+
+        100% {
+            stroke-dasharray: 2, 30;
+        }
+    }
+
+    .list-btn .edit-btn, .del-btn {
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        color: #000;
+    }
+
+    .list-btn .edit-btn:hover {
+        background-color: #00bfff;
+        color: #fff;
+        box-shadow: none;
+    }
+
+    .list-btn .del-btn:hover {
+        background-color: #ff0000;
+        color: #fff;
+        box-shadow: none;
+    }
+
+    /* footer */
+    footer {
+        background-color: #fff;
+        border-top: 2px solid #dcdcdc;
+    }
+
+    footer .add-container {
+        background-color: #f1f1f1;
+    }
+
+    .add-container input[type=text] {
+        color: #000;
+    }
+
+    .add-container .add-btn, .editing-btn {
+        background-color: #fff;
+        color: #000;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .add-container .add-btn:hover, .editing-btn:hover {
+        background-color: #f0fff0;
+    }
+
+    /* svg loader */
+    .loader-container {
+        display: block;
+        animation: rotate 0.75s linear infinite;
+    }
+
+    .loader-container .loader {
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-dasharray: 5, 60;
+        animation: dasharray 3s ease-in-out infinite;
+    }
+
+    @keyframes rotate {
+        0% {
+            rotate: 0deg;
+        }
+
+        100% {
+            rotate: 360deg;
+        }
+    }
+
+    @keyframes dasharray {
+        0% {
+            stroke-dasharray: 5, 60;
+        }
+
+        50% {
+            stroke-dasharray: 38, 60;
+
+        }
+
+        100% {
+            stroke-dasharray: 5, 60;
+        }
+    }
+
+    @media (min-width:1000px) {
+        .list-body {
+            border: 2px solid #ddd;
+            overflow: hidden;
+        }
+    }
+}
